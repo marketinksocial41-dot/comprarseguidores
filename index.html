@@ -18,14 +18,21 @@
     font-family:'Poppins', sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#0f0f0f;
     color:white;
+    overflow-x:hidden;
 }
+
+/* HEADER */
 
 header{
     text-align:center;
-    padding:50px 20px;
+    padding:60px 20px;
     background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
 }
 
@@ -35,20 +42,45 @@ header{
 }
 
 h1{
-    font-size:42px;
+    font-size:48px;
     font-weight:700;
 }
 
 .descricao{
-    max-width:800px;
+    max-width:900px;
     margin:20px auto 0;
     font-size:18px;
-    line-height:1.7;
+    line-height:1.8;
 }
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.stat-box{
+    background:rgba(255,255,255,0.15);
+    padding:20px 30px;
+    border-radius:18px;
+    backdrop-filter:blur(10px);
+}
+
+.stat-box h2{
+    font-size:30px;
+}
+
+.stat-box p{
+    margin-top:5px;
+}
+
+/* PACOTES */
 
 .container{
     max-width:1200px;
-    margin:50px auto;
+    margin:60px auto;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -64,6 +96,7 @@ h1{
     text-align:center;
     box-shadow:0 0 20px rgba(255,255,255,0.05);
     transition:0.3s;
+    border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
@@ -76,7 +109,7 @@ h1{
 }
 
 .preco{
-    font-size:38px;
+    font-size:42px;
     color:#00ff99;
     margin:20px 0;
     font-weight:bold;
@@ -104,18 +137,21 @@ button:hover{
     opacity:0.9;
 }
 
+/* MODAL */
+
 .modal{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.8);
+    background:rgba(0,0,0,0.85);
     display:none;
     justify-content:center;
     align-items:center;
     padding:20px;
     overflow:auto;
+    z-index:999;
 }
 
 .modal-content{
@@ -145,6 +181,7 @@ input{
     border-radius:10px;
     margin-bottom:20px;
     font-size:16px;
+    outline:none;
 }
 
 .fechar{
@@ -177,10 +214,97 @@ input{
     background:#00cc66;
 }
 
+/* DEPOIMENTOS */
+
+.depoimentos{
+    max-width:1200px;
+    margin:80px auto;
+    padding:20px;
+}
+
+.depoimentos h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.depoimentos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.depoimento{
+    background:#1a1a1a;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 0 15px rgba(255,255,255,0.04);
+}
+
+.depoimento-topo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.depoimento-topo img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.nome{
+    font-weight:600;
+    font-size:18px;
+}
+
+.estrelas{
+    color:#FFD700;
+    font-size:18px;
+}
+
+.texto{
+    color:#ddd;
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* FOOTER */
+
 footer{
     text-align:center;
     padding:30px;
     color:#aaa;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:34px;
+    }
+
+    .descricao{
+        font-size:15px;
+    }
+
+    .container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:100%;
+        max-width:360px;
+    }
+
+    .depoimentos h2{
+        font-size:30px;
+    }
+
 }
 
 </style>
@@ -195,10 +319,30 @@ footer{
 <h1>MARKETING SOCIAL</h1>
 
 <p class="descricao">
-Aumente sua autoridade no Instagram com seguidores brasileiros de alta qualidade.
-Ganhe mais credibilidade, engajamento e destaque nas redes sociais com entrega rápida e segura.
-Ideal para influenciadores, lojas, empresas e criadores de conteúdo que desejam crescer rapidamente.
+Há mais de <strong>10 anos no mercado digital</strong>, a Marketing Social é referência em crescimento para Instagram no Brasil.
+Milhares de clientes satisfeitos confiaram em nossos serviços para aumentar autoridade, credibilidade e presença nas redes sociais.
+
+Trabalhamos com entrega rápida, suporte especializado e seguidores de alta qualidade para ajudar influenciadores, empresas e criadores de conteúdo a crescerem de forma profissional e segura.
 </p>
+
+<div class="stats">
+
+<div class="stat-box">
+<h2>+50MIL</h2>
+<p>Clientes Atendidos</p>
+</div>
+
+<div class="stat-box">
+<h2>10 ANOS</h2>
+<p>De Credibilidade</p>
+</div>
+
+<div class="stat-box">
+<h2>24H</h2>
+<p>Suporte Especializado</p>
+</div>
+
+</div>
 
 </header>
 
@@ -250,6 +394,94 @@ Ideal para influenciadores, lojas, empresas e criadores de conteúdo que desejam
     <button onclick="abrirModal('50 MIL Seguidores - R$450', '450')">
         COMPRAR
     </button>
+</div>
+
+</section>
+
+<section class="depoimentos">
+
+<h2>DEPOIMENTOS DE CLIENTES</h2>
+
+<div class="depoimentos-grid">
+
+<div class="depoimento">
+<div class="depoimento-topo">
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+<div>
+<div class="nome">Mariana Costa</div>
+<div class="estrelas">★★★★★</div>
+</div>
+</div>
+<div class="texto">
+Chegou muito rápido e meu perfil ficou muito mais profissional.
+</div>
+</div>
+
+<div class="depoimento">
+<div class="depoimento-topo">
+<img src="https://randomuser.me/api/portraits/men/83.jpg">
+<div>
+<div class="nome">Ricardo Almeida</div>
+<div class="estrelas">★★★★★</div>
+</div>
+</div>
+<div class="texto">
+Empresa extremamente profissional, seguidores começaram cair na conta em menos de 1 hora.
+</div>
+</div>
+
+<div class="depoimento">
+<div class="depoimento-topo">
+<img src="https://randomuser.me/api/portraits/women/68.jpg">
+<div>
+<div class="nome">Amanda Silva</div>
+<div class="estrelas">★★★★★</div>
+</div>
+</div>
+<div class="texto">
+Meu engajamento aumentou muito depois da compra.
+</div>
+</div>
+
+<div class="depoimento">
+<div class="depoimento-topo">
+<img src="https://randomuser.me/api/portraits/men/41.jpg">
+<div>
+<div class="nome">Carlos Eduardo</div>
+<div class="estrelas">★★★★★</div>
+</div>
+</div>
+<div class="texto">
+Atendimento rápido e entrega antes do prazo.
+</div>
+</div>
+
+<div class="depoimento">
+<div class="depoimento-topo">
+<img src="https://randomuser.me/api/portraits/women/12.jpg">
+<div>
+<div class="nome">Fernanda Lima</div>
+<div class="estrelas">★★★★★</div>
+</div>
+</div>
+<div class="texto">
+Meu Instagram ficou muito mais forte para vendas.
+</div>
+</div>
+
+<div class="depoimento">
+<div class="depoimento-topo">
+<img src="https://randomuser.me/api/portraits/men/75.jpg">
+<div>
+<div class="nome">Rafael Gomes</div>
+<div class="estrelas">★★★★★</div>
+</div>
+</div>
+<div class="texto">
+Recomendo demais, seguidores chegaram normalmente.
+</div>
+</div>
+
 </div>
 
 </section>
