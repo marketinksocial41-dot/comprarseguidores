@@ -693,18 +693,18 @@ Milhares de clientes satisfeitos confiaram em nossos serviços para aumentar aut
 
 <div class="card">
 
-<h2>Pacote Inicial</h2>
+<h2>Pacote Básico</h2>
 
 <div class="preco">
-R$200
+R$5
 </div>
 
 <div class="seguidores">
-10 MIL Seguidores
+1 MIL Seguidores
 </div>
 
 <button
-onclick="abrirModal('10 MIL Seguidores - R$200','200')"
+onclick="abrirModal('1 MIL Seguidores - R$5','5')"
 >
 COMPRAR
 </button>
@@ -714,18 +714,18 @@ COMPRAR
 
 <div class="card">
 
-<h2>Pacote Intermediário</h2>
+<h2>Pacote Médio</h2>
 
 <div class="preco">
-R$300
+R$10
 </div>
 
 <div class="seguidores">
-20 MIL Seguidores
+3 MIL Seguidores
 </div>
 
 <button
-onclick="abrirModal('20 MIL Seguidores - R$300','300')"
+onclick="abrirModal('3 MIL Seguidores - R$10','10')"
 >
 COMPRAR
 </button>
@@ -738,15 +738,15 @@ COMPRAR
 <h2>Pacote Premium</h2>
 
 <div class="preco">
-R$450
+R$15
 </div>
 
 <div class="seguidores">
-50 MIL Seguidores
+5 MIL Seguidores
 </div>
 
 <button
-onclick="abrirModal('50 MIL Seguidores - R$450','450')"
+onclick="abrirModal('5 MIL Seguidores - R$15','15')"
 >
 COMPRAR
 </button>
@@ -755,34 +755,48 @@ COMPRAR
 
 </section>
 
-
 <section class="depoimentos">
 
 <h2>DEPOIMENTOS DE CLIENTES</h2>
 
 <div class="depoimentos-grid">
 
-<!-- 13 depoimentos -->
-
 <script>
+
 const depoimentos = [
+
 ["Mariana Costa","women/44","Chegou muito rápido e meu perfil ficou muito mais profissional."],
+
 ["Ricardo Almeida","men/83","Empresa extremamente profissional e entrega muito rápida."],
+
 ["Amanda Silva","women/68","Meu engajamento aumentou muito depois da compra."],
+
 ["Carlos Henrique","men/12","Atendimento excelente e seguidores caíram muito pouco."],
+
 ["Fernanda Rocha","women/55","Muito melhor do que outros sites que já usei."],
+
 ["Lucas Martins","men/32","Entrega rápida e suporte respondeu tudo."],
+
 ["Patrícia Gomes","women/21","Meu perfil ficou com mais autoridade."],
+
 ["João Pedro","men/45","Comprei e recebi antes do esperado."],
+
 ["Vanessa Lima","women/11","Tudo funcionando perfeitamente."],
+
 ["Bruno César","men/61","Recomendo demais, gostei muito do resultado."],
+
 ["Juliana Alves","women/36","Os seguidores chegaram rápido e reais."],
+
 ["Felipe Santos","men/74","Já comprei 3 vezes e sempre entrega."],
+
 ["Camila Ferreira","women/63","Valeu muito a pena, excelente serviço."]
+
 ];
 
 document.write(
+
 depoimentos.map(d=>`
+
 <div class="depoimento">
 
 <div class="depoimento-topo">
@@ -808,14 +822,16 @@ ${d[2]}
 </div>
 
 </div>
+
 `).join('')
+
 );
+
 </script>
 
 </div>
 
 </section>
-
 
 <section class="suporte">
 
@@ -959,19 +975,19 @@ let pacoteAtual='';
 
 const pacotes={
 
-'200':{
-nome:'10 MIL Seguidores',
-valor:'200'
+'5':{
+nome:'1 MIL Seguidores',
+valor:'5'
 },
 
-'300':{
-nome:'20 MIL Seguidores',
-valor:'300'
+'10':{
+nome:'3 MIL Seguidores',
+valor:'10'
 },
 
-'450':{
-nome:'50 MIL Seguidores',
-valor:'450'
+'15':{
+nome:'5 MIL Seguidores',
+valor:'15'
 }
 
 };
@@ -1075,15 +1091,9 @@ pacotes[pacoteAtual].valor;
 const descricao=
 `${pacotes[pacoteAtual].nome} | Instagram: ${insta}`;
 
-
-// URL PIX
-
 const url=
 
 `https://pix-divpag-1.onrender.com/?valor=${valor}&descricao=${encodeURIComponent(descricao)}&nome=${encodeURIComponent(nome)}&cpf=${encodeURIComponent(cpf)}`;
-
-
-// ACORDA O RENDER
 
 await fetch(
 'https://pix-divpag-1.onrender.com/',
@@ -1091,9 +1101,6 @@ await fetch(
 mode:'no-cors'
 }
 );
-
-
-// PEGA PIX
 
 const response=
 await fetch(url);
