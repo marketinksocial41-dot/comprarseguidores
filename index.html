@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Marketing Social</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:50px 20px;
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+.logo{
+    width:90px;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:42px;
+    font-weight:700;
+}
+
+.descricao{
+    max-width:800px;
+    margin:20px auto 0;
+    font-size:18px;
+    line-height:1.7;
+}
+
+.container{
+    max-width:1200px;
+    margin:50px auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    padding:20px;
+}
+
+.card{
+    background:#1a1a1a;
+    width:320px;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(255,255,255,0.05);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h2{
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.preco{
+    font-size:38px;
+    color:#00ff99;
+    margin:20px 0;
+    font-weight:bold;
+}
+
+.seguidores{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+button{
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+    border:none;
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow:auto;
+}
+
+.modal-content{
+    background:#1a1a1a;
+    width:100%;
+    max-width:550px;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+}
+
+.modal h3{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.info{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+.fechar{
+    margin-top:15px;
+    background:#333;
+}
+
+.pix-area{
+    display:none;
+    margin-top:25px;
+}
+
+.pix-area img{
+    width:280px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.pix-code{
+    background:#111;
+    padding:15px;
+    border-radius:10px;
+    font-size:13px;
+    word-break:break-all;
+    margin-bottom:15px;
+    border:1px solid #333;
+}
+
+.copy-btn{
+    background:#00cc66;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+
+<h1>MARKETING SOCIAL</h1>
+
+<p class="descricao">
+Aumente sua autoridade no Instagram com seguidores brasileiros de alta qualidade.
+Ganhe mais credibilidade, engajamento e destaque nas redes sociais com entrega rápida e segura.
+Ideal para influenciadores, lojas, empresas e criadores de conteúdo que desejam crescer rapidamente.
+</p>
+
+</header>
+
+<section class="container">
+
+<div class="card">
+    <h2>Pacote Inicial</h2>
+
+    <div class="preco">
+        R$200
+    </div>
+
+    <div class="seguidores">
+        10 MIL Seguidores
+    </div>
+
+    <button onclick="abrirModal('10 MIL Seguidores - R$200', '200')">
+        COMPRAR
+    </button>
+</div>
+
+<div class="card">
+    <h2>Pacote Intermediário</h2>
+
+    <div class="preco">
+        R$300
+    </div>
+
+    <div class="seguidores">
+        20 MIL Seguidores
+    </div>
+
+    <button onclick="abrirModal('20 MIL Seguidores - R$300', '300')">
+        COMPRAR
+    </button>
+</div>
+
+<div class="card">
+    <h2>Pacote Premium</h2>
+
+    <div class="preco">
+        R$450
+    </div>
+
+    <div class="seguidores">
+        50 MIL Seguidores
+    </div>
+
+    <button onclick="abrirModal('50 MIL Seguidores - R$450', '450')">
+        COMPRAR
+    </button>
+</div>
+
+</section>
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<h3 id="pacoteNome"></h3>
+
+<div id="formulario">
+
+<p class="info">
+<strong>DEIXE SEU INSTAGRAM ABERTO</strong><br><br>
+
+𝗔𝗣𝗢𝗦 𝗙𝗔𝗭𝗘𝗥 𝗢 𝗣𝗘𝗗𝗜𝗗𝗢 𝗔𝗚𝗨𝗔𝗥𝗗𝗘:<br><br>
+
+🕑 De 30min a 1hr se não 12hrs para iniciar.
+</p>
+
+<input type="text" id="instagram" placeholder="Digite seu @ do Instagram">
+
+<button onclick="mostrarPix()">
+PAGAR
+</button>
+
+</div>
+
+<div class="pix-area" id="pixArea">
+
+<h2 style="margin-bottom:20px;">
+PAGAMENTO PIX
+</h2>
+
+<img id="pixImagem" src="">
+
+<div class="pix-code" id="pixCode"></div>
+
+<button class="copy-btn" onclick="copiarPix()">
+COPIAR CÓDIGO PIX
+</button>
+
+</div>
+
+<button class="fechar" onclick="fecharModal()">
+FECHAR
+</button>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Marketing Social - Todos os direitos reservados
+</footer>
+
+<script>
+
+let pacoteAtual = '';
+
+const pacotes = {
+
+'200':{
+imagem:'https://i.ibb.co/tTV14fFV/Captura-de-tela-2026-05-18-004456.png',
+pix:'00020126870014br.gov.bcb.pix2565pix.basspago.com.br/qr/v3/at/b9b6ad11-5335-4352-a585-dc3c50a776bd5204000053039865802BR5921RK_INTERMEDIACAO_LTDA6008BRASILIA62070503***63041FAE'
+},
+
+'300':{
+imagem:'https://i.ibb.co/F4Pd4jwF/Captura-de-tela-2026-05-18-004739.png',
+pix:'00020126870014br.gov.bcb.pix2565pix.basspago.com.br/qr/v3/at/c982b74d-07a6-4270-ad13-0770374a54a95204000053039865802BR5921RK_INTERMEDIACAO_LTDA6008BRASILIA62070503***6304A375'
+},
+
+'450':{
+imagem:'https://i.ibb.co/1JG3jqT8/Captura-de-tela-2026-05-18-004939.png',
+pix:'00020126870014br.gov.bcb.pix2565pix.basspago.com.br/qr/v3/at/38464a4c-8ca6-40cf-9b7a-0bb5c34edf3c5204000053039865802BR5921RK_INTERMEDIACAO_LTDA6008BRASILIA62070503***630400D3'
+}
+
+};
+
+function abrirModal(nome, valor){
+
+    pacoteAtual = valor;
+
+    document.getElementById('modal').style.display='flex';
+
+    document.getElementById('pacoteNome').innerHTML=nome;
+
+    document.getElementById('formulario').style.display='block';
+
+    document.getElementById('pixArea').style.display='none';
+
+}
+
+function fecharModal(){
+
+    document.getElementById('modal').style.display='none';
+
+}
+
+function mostrarPix(){
+
+    const insta = document.getElementById('instagram').value;
+
+    if(insta == ''){
+
+        alert('Digite seu Instagram');
+
+        return;
+
+    }
+
+    document.getElementById('formulario').style.display='none';
+
+    document.getElementById('pixArea').style.display='block';
+
+    document.getElementById('pixImagem').src = pacotes[pacoteAtual].imagem;
+
+    document.getElementById('pixCode').innerText = pacotes[pacoteAtual].pix;
+
+}
+
+function copiarPix(){
+
+    const texto = document.getElementById('pixCode').innerText;
+
+    navigator.clipboard.writeText(texto);
+
+    alert('Código PIX copiado!');
+
+}
+
+</script>
+
+</body>
+</html>
