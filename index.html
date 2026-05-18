@@ -66,6 +66,13 @@ overflow-x:hidden;
 min-height:100vh;
 -webkit-font-smoothing:antialiased;
 -webkit-overflow-scrolling:touch;
+
+padding-bottom:90px;
+
+overscroll-behavior:none;
+
+-webkit-user-select:none;
+user-select:none;
 }
 
 /* ===================================================== */
@@ -413,6 +420,13 @@ padding:35px;
 text-align:center;
 border:1px solid rgba(255,255,255,0.06);
 animation:fade 0.3s ease;
+
+box-shadow:
+0 25px 80px rgba(0,0,0,0.6);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
 }
 
 @keyframes fade{
@@ -623,54 +637,157 @@ transform:scale(1);
 
 @media(max-width:768px){
 
+body{
+padding-bottom:120px;
+}
+
 header{
-padding:50px 18px 70px;
+padding:45px 18px 65px;
+border-radius:0 0 35px 35px;
 }
 
 .logo{
-max-width:280px;
+max-width:250px;
 }
 
 h1{
-font-size:38px;
+font-size:34px;
+line-height:1.1;
 }
 
 .descricao{
 font-size:15px;
 line-height:1.8;
+margin-top:18px;
+}
+
+.stats{
+gap:14px;
+margin-top:30px;
 }
 
 .stat-box{
 width:100%;
-max-width:320px;
+max-width:100%;
+padding:18px;
+border-radius:20px;
+}
+
+.stat-box h2{
+font-size:28px;
 }
 
 .container{
-padding:25px 16px 60px;
-gap:22px;
+padding:22px 16px 40px;
+gap:20px;
 }
 
 .card{
-padding:28px 22px;
-border-radius:28px;
+padding:24px 20px;
+border-radius:26px;
 }
 
 .card h2{
-font-size:30px;
+font-size:28px;
 }
 
 .preco{
-font-size:50px;
+font-size:46px;
 }
 
 .seguidores{
-font-size:18px;
+font-size:17px;
+margin-bottom:22px;
 }
 
 button{
 padding:17px;
-font-size:17px;
+font-size:16px;
 border-radius:16px;
+}
+
+.depoimentos{
+padding:50px 16px;
+}
+
+.depoimentos h2{
+font-size:32px;
+margin-bottom:35px;
+}
+
+.depoimento{
+padding:20px;
+border-radius:20px;
+}
+
+.suporte{
+padding:60px 16px;
+}
+
+.suporte h2{
+font-size:32px;
+}
+
+.email-box{
+width:100%;
+padding:24px;
+}
+
+.email{
+font-size:19px;
+word-break:break-word;
+}
+
+.modal{
+padding:0;
+align-items:flex-end;
+}
+
+.modal-content{
+max-width:100%;
+border-radius:28px 28px 0 0;
+padding:28px 20px 35px;
+min-height:auto;
+}
+
+.modal h3{
+font-size:28px;
+}
+
+.info{
+font-size:15px;
+line-height:1.7;
+}
+
+input{
+padding:17px;
+font-size:16px;
+border-radius:16px;
+}
+
+#pixQrcode canvas{
+max-width:240px;
+}
+
+.pix-code{
+font-size:12px;
+padding:14px;
+}
+
+.success-area h2{
+font-size:26px;
+}
+
+.whatsapp-float{
+width:62px;
+height:62px;
+right:18px;
+bottom:18px;
+}
+
+.whatsapp-float img{
+width:33px;
+height:33px;
 }
 
 }
