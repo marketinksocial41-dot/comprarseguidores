@@ -1,3 +1,8 @@
+<!-- ===================================================== -->
+<!-- MARKETING SOCIAL COMPLETO -->
+<!-- PACOTES 5 10 15 + WEBHOOK + PAGAMENTO APROVADO -->
+<!-- ===================================================== -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,6 +22,10 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet"
 />
+
+<!-- ===================================================== -->
+<!-- QR CODE -->
+<!-- ===================================================== -->
 
 <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 
@@ -40,7 +49,9 @@ color:white;
 overflow-x:hidden;
 }
 
+/* ===================================================== */
 /* HEADER */
+/* ===================================================== */
 
 header{
 padding:70px 20px 90px;
@@ -122,7 +133,9 @@ margin-top:6px;
 font-size:15px;
 }
 
+/* ===================================================== */
 /* PACOTES */
+/* ===================================================== */
 
 .container{
 max-width:1300px;
@@ -215,6 +228,9 @@ cursor:pointer;
 transition:0.2s;
 position:relative;
 z-index:2;
+
+/* ESPAÇO ENTRE BOTÕES */
+margin-top:12px;
 }
 
 button:active{
@@ -225,7 +241,17 @@ button:hover{
 opacity:0.96;
 }
 
+/* BOTÃO FECHAR */
+
+.fechar{
+background:#3a3a3a !important;
+color:white !important;
+margin-top:18px;
+border:none;
+}
+/* ===================================================== */
 /* DEPOIMENTOS */
+/* ===================================================== */
 
 .depoimentos{
 padding:80px 20px;
@@ -284,7 +310,9 @@ color:#ccc;
 font-size:15px;
 }
 
+/* ===================================================== */
 /* SUPORTE */
+/* ===================================================== */
 
 .suporte{
 background:#121212;
@@ -321,7 +349,9 @@ font-weight:700;
 color:#00ff99;
 }
 
+/* ===================================================== */
 /* FOOTER */
+/* ===================================================== */
 
 footer{
 padding:35px 20px;
@@ -330,7 +360,9 @@ color:#888;
 font-size:15px;
 }
 
+/* ===================================================== */
 /* MODAL */
+/* ===================================================== */
 
 .modal{
 position:fixed;
@@ -409,6 +441,10 @@ box-shadow:
 0 0 0 4px rgba(255,59,127,0.15);
 }
 
+/* ===================================================== */
+/* PIX */
+/* ===================================================== */
+
 .pix-area{
 display:none;
 margin-top:20px;
@@ -452,11 +488,34 @@ linear-gradient(
 margin-bottom:12px;
 }
 
-.fechar{
-background:#2d2d2d;
+/* ===================================================== */
+/* APROVADO */
+/* ===================================================== */
+
+.success-area{
+display:none;
+margin-top:20px;
+padding:25px;
+background:#102617;
+border:2px solid #00ff99;
+border-radius:24px;
+animation:fade 0.3s ease;
 }
 
+.success-area h2{
+color:#00ff99;
+font-size:32px;
+margin-bottom:10px;
+}
+
+.success-area p{
+line-height:1.8;
+color:#ddd;
+}
+
+/* ===================================================== */
 /* LOADING */
+/* ===================================================== */
 
 .loading{
 display:none;
@@ -494,7 +553,9 @@ color:#bbb;
 line-height:1.7;
 }
 
+/* ===================================================== */
 /* WHATSAPP */
+/* ===================================================== */
 
 .whatsapp-float{
 position:fixed;
@@ -534,7 +595,9 @@ transform:scale(1);
 
 }
 
+/* ===================================================== */
 /* MOBILE */
+/* ===================================================== */
 
 @media(max-width:768px){
 
@@ -588,67 +651,16 @@ font-size:17px;
 border-radius:16px;
 }
 
-.depoimentos{
-padding:70px 16px;
-}
-
-.depoimentos h2{
-font-size:34px;
-}
-
-.suporte{
-padding:70px 16px;
-}
-
-.suporte h2{
-font-size:34px;
-}
-
-.email{
-font-size:20px;
-word-break:break-word;
-}
-
-.modal{
-padding:12px;
-align-items:flex-end;
-}
-
-.modal-content{
-border-radius:30px 30px 0 0;
-padding:28px 22px;
-max-width:100%;
-min-height:auto;
-}
-
-.modal h3{
-font-size:28px;
-}
-
-.info{
-font-size:15px;
-}
-
-input{
-padding:16px;
-font-size:15px;
-border-radius:16px;
-}
-
-#pixQrcode canvas{
-max-width:250px;
-}
-
-.pix-code{
-font-size:12px;
-}
-
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- ===================================================== -->
+<!-- HEADER -->
+<!-- ===================================================== -->
 
 <header>
 
@@ -689,22 +701,26 @@ Milhares de clientes satisfeitos confiaram em nossos serviços para aumentar aut
 
 </header>
 
+<!-- ===================================================== -->
+<!-- PACOTES -->
+<!-- ===================================================== -->
+
 <section class="container">
 
 <div class="card">
 
-<h2>Pacote Básico</h2>
+<h2>Pacote Inicial</h2>
 
 <div class="preco">
-R$5
+R$200
 </div>
 
 <div class="seguidores">
-1 MIL Seguidores
+20 MIL Seguidores
 </div>
 
 <button
-onclick="abrirModal('1 MIL Seguidores - R$5','5')"
+onclick="abrirModal('20 MIL Seguidores - R$200','200')"
 >
 COMPRAR
 </button>
@@ -714,18 +730,18 @@ COMPRAR
 
 <div class="card">
 
-<h2>Pacote Médio</h2>
+<h2>Pacote Intermediário</h2>
 
 <div class="preco">
-R$10
+R$300
 </div>
 
 <div class="seguidores">
-3 MIL Seguidores
+30 MIL Seguidores
 </div>
 
 <button
-onclick="abrirModal('3 MIL Seguidores - R$10','10')"
+onclick="abrirModal('30 MIL Seguidores - R$300','300')"
 >
 COMPRAR
 </button>
@@ -738,15 +754,15 @@ COMPRAR
 <h2>Pacote Premium</h2>
 
 <div class="preco">
-R$15
+R$450
 </div>
 
 <div class="seguidores">
-5 MIL Seguidores
+100 MIL Seguidores
 </div>
 
 <button
-onclick="abrirModal('5 MIL Seguidores - R$15','15')"
+onclick="abrirModal('100 MIL Seguidores - R$450','450')"
 >
 COMPRAR
 </button>
@@ -754,6 +770,10 @@ COMPRAR
 </div>
 
 </section>
+
+<!-- ===================================================== -->
+<!-- DEPOIMENTOS -->
+<!-- ===================================================== -->
 
 <section class="depoimentos">
 
@@ -766,29 +786,17 @@ COMPRAR
 const depoimentos = [
 
 ["Mariana Costa","women/44","Chegou muito rápido e meu perfil ficou muito mais profissional."],
-
 ["Ricardo Almeida","men/83","Empresa extremamente profissional e entrega muito rápida."],
-
 ["Amanda Silva","women/68","Meu engajamento aumentou muito depois da compra."],
-
 ["Carlos Henrique","men/12","Atendimento excelente e seguidores caíram muito pouco."],
-
 ["Fernanda Rocha","women/55","Muito melhor do que outros sites que já usei."],
-
 ["Lucas Martins","men/32","Entrega rápida e suporte respondeu tudo."],
-
 ["Patrícia Gomes","women/21","Meu perfil ficou com mais autoridade."],
-
 ["João Pedro","men/45","Comprei e recebi antes do esperado."],
-
 ["Vanessa Lima","women/11","Tudo funcionando perfeitamente."],
-
 ["Bruno César","men/61","Recomendo demais, gostei muito do resultado."],
-
 ["Juliana Alves","women/36","Os seguidores chegaram rápido e reais."],
-
 ["Felipe Santos","men/74","Já comprei 3 vezes e sempre entrega."],
-
 ["Camila Ferreira","women/63","Valeu muito a pena, excelente serviço."]
 
 ];
@@ -833,6 +841,10 @@ ${d[2]}
 
 </section>
 
+<!-- ===================================================== -->
+<!-- SUPORTE -->
+<!-- ===================================================== -->
+
 <section class="suporte">
 
 <h2>SUPORTE 24 HORAS</h2>
@@ -855,7 +867,9 @@ marketingsocial@gmail.com
 
 </section>
 
+<!-- ===================================================== -->
 <!-- MODAL -->
+<!-- ===================================================== -->
 
 <div class="modal" id="modal">
 
@@ -904,6 +918,10 @@ PAGAR
 
 </div>
 
+<!-- ===================================================== -->
+<!-- LOADING -->
+<!-- ===================================================== -->
+
 <div class="loading" id="loading">
 
 <div class="loading-spinner"></div>
@@ -918,6 +936,10 @@ Estamos preparando seu pagamento.
 </p>
 
 </div>
+
+<!-- ===================================================== -->
+<!-- PIX -->
+<!-- ===================================================== -->
 
 <div class="pix-area" id="pixArea">
 
@@ -935,6 +957,35 @@ onclick="copiarPix()"
 >
 COPIAR PIX
 </button>
+
+<p style="margin-top:10px;color:#bbb;">
+Aguardando pagamento...
+</p>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- PAGAMENTO APROVADO -->
+<!-- ===================================================== -->
+
+<div
+class="success-area"
+id="successArea"
+>
+
+<h2>
+✅ PAGAMENTO APROVADO
+</h2>
+
+<p>
+
+Seu pagamento foi confirmado com sucesso.
+
+<br><br>
+
+Seu pedido já está sendo processado automaticamente.
+
+</p>
 
 </div>
 
@@ -955,7 +1006,9 @@ FECHAR
 
 </footer>
 
+<!-- ===================================================== -->
 <!-- WHATSAPP -->
+<!-- ===================================================== -->
 
 <a
 class="whatsapp-float"
@@ -969,33 +1022,59 @@ src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
 
 </a>
 
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
 <script>
 
+// =====================================================
+// API
+// =====================================================
+
+const API_URL =
+'https://pix-divpag-1.onrender.com';
+
+
+// =====================================================
+// VARIAVEIS
+// =====================================================
+
 let pacoteAtual='';
+let aprovado=false;
+let transacaoId='';
+
+
+// =====================================================
+// PACOTES
+// =====================================================
 
 const pacotes={
 
-'5':{
-nome:'1 MIL Seguidores',
-valor:'5'
+'200':{
+nome:'20 MIL Seguidores',
+valor:'200'
 },
 
-'10':{
-nome:'3 MIL Seguidores',
-valor:'10'
+'300':{
+nome:'30 MIL Seguidores',
+valor:'300'
 },
 
-'15':{
-nome:'5 MIL Seguidores',
-valor:'15'
+'450':{
+nome:'100 MIL Seguidores',
+valor:'450'
 }
 
 };
 
-
+// =====================================================
 // ABRIR MODAL
+// =====================================================
 
 function abrirModal(nome,valor){
+
+aprovado = false;
 
 pacoteAtual=valor;
 
@@ -1019,10 +1098,16 @@ document
 .getElementById('loading')
 .style.display='none';
 
+document
+.getElementById('successArea')
+.style.display='none';
+
 }
 
 
+// =====================================================
 // FECHAR MODAL
+// =====================================================
 
 function fecharModal(){
 
@@ -1033,7 +1118,9 @@ document
 }
 
 
+// =====================================================
 // GERAR PIX
+// =====================================================
 
 async function gerarPix(){
 
@@ -1091,22 +1178,42 @@ pacotes[pacoteAtual].valor;
 const descricao=
 `${pacotes[pacoteAtual].nome} | Instagram: ${insta}`;
 
+
+// =====================================================
+// URL PIX
+// =====================================================
+
 const url=
 
-`https://pix-divpag-1.onrender.com/?valor=${valor}&descricao=${encodeURIComponent(descricao)}&nome=${encodeURIComponent(nome)}&cpf=${encodeURIComponent(cpf)}`;
+`${API_URL}/?valor=${valor}&descricao=${encodeURIComponent(descricao)}&nome=${encodeURIComponent(nome)}&cpf=${encodeURIComponent(cpf)}`;
+
+
+// =====================================================
+// ACORDA O RENDER
+// =====================================================
 
 await fetch(
-'https://pix-divpag-1.onrender.com/',
+API_URL,
 {
 mode:'no-cors'
 }
 );
+
+
+// =====================================================
+// GERAR PIX
+// =====================================================
 
 const response=
 await fetch(url);
 
 const html=
 await response.text();
+
+
+// =====================================================
+// PARSER HTML
+// =====================================================
 
 const parser=
 new DOMParser();
@@ -1116,6 +1223,11 @@ parser.parseFromString(
 html,
 'text/html'
 );
+
+
+// =====================================================
+// PIX
+// =====================================================
 
 const pixText=
 
@@ -1128,6 +1240,28 @@ if(!pixText){
 throw new Error('PIX inválido');
 
 }
+
+
+// =====================================================
+// PEGAR ID TRANSACAO
+// =====================================================
+
+const match =
+html.match(
+/status\/(.*?)"/
+);
+
+if(match){
+
+transacaoId =
+match[1];
+
+}
+
+
+// =====================================================
+// MOSTRAR PIX
+// =====================================================
 
 document
 .getElementById('loading')
@@ -1148,6 +1282,11 @@ document
 document
 .getElementById('pixQrcode')
 .innerHTML='';
+
+
+// =====================================================
+// QR CODE
+// =====================================================
 
 QRCode.toCanvas(
 
@@ -1174,6 +1313,13 @@ document
 
 );
 
+
+// =====================================================
+// VERIFICAR PAGAMENTO
+// =====================================================
+
+verificarPagamento();
+
 }catch(err){
 
 console.log(err);
@@ -1194,7 +1340,9 @@ btn.innerHTML = 'PAGAR';
 }
 
 
+// =====================================================
 // COPIAR PIX
+// =====================================================
 
 function copiarPix(){
 
@@ -1207,6 +1355,101 @@ document
 navigator.clipboard.writeText(texto);
 
 alert('PIX copiado!');
+
+}
+
+
+// =====================================================
+// VERIFICAR PAGAMENTO
+// =====================================================
+
+function verificarPagamento(){
+
+const intervalo = setInterval(async ()=>{
+
+if(aprovado){
+
+clearInterval(intervalo);
+return;
+
+}
+
+try{
+
+
+// =====================================================
+// CONSULTA STATUS
+// =====================================================
+
+const response = await fetch(
+
+`${API_URL}/status/${transacaoId}`
+
+);
+
+const data =
+await response.json();
+
+
+// =====================================================
+// PAGAMENTO APROVADO
+// =====================================================
+
+if(data.pago){
+
+aprovado = true;
+
+mostrarAprovado();
+
+clearInterval(intervalo);
+
+}
+
+}catch(err){
+
+console.log(err);
+
+}
+
+},3000);
+
+}
+
+
+// =====================================================
+// MOSTRAR APROVADO
+// =====================================================
+
+function mostrarAprovado(){
+
+document
+.getElementById('pixArea')
+.style.display='none';
+
+document
+.getElementById('successArea')
+.style.display='block';
+
+
+// =====================================================
+// SOM
+// =====================================================
+
+new Audio(
+'https://www.soundjay.com/buttons/sounds/button-4.mp3'
+).play();
+
+
+// =====================================================
+// REDIRECIONAMENTO
+// =====================================================
+
+setTimeout(()=>{
+
+window.location.href =
+'https://google.com';
+
+},5000);
 
 }
 
