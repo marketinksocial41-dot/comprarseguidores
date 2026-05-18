@@ -8,6 +8,22 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="theme-color" content="#0b0b0b">
+
+<meta
+name="apple-mobile-web-app-capable"
+content="yes"
+/>
+
+<meta
+name="mobile-web-app-capable"
+content="yes"
+/>
+
+<meta
+name="apple-mobile-web-app-status-bar-style"
+content="black-translucent"
+/>
 
 <meta
 name="viewport"
@@ -47,6 +63,9 @@ body{
 background:#0b0b0b;
 color:white;
 overflow-x:hidden;
+min-height:100vh;
+-webkit-font-smoothing:antialiased;
+-webkit-overflow-scrolling:touch;
 }
 
 /* ===================================================== */
@@ -433,6 +452,9 @@ color:white;
 font-size:16px;
 outline:none;
 transition:0.2s;
+
+appearance:none;
+-webkit-appearance:none;
 }
 
 input:focus{
