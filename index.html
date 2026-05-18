@@ -1,349 +1,600 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+/>
 
 <title>Marketing Social</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#0f0f0f;
-    color:white;
-    overflow-x:hidden;
+background:#0b0b0b;
+color:white;
+overflow-x:hidden;
 }
 
+/* ===================================== */
 /* HEADER */
+/* ===================================== */
 
 header{
-    text-align:center;
-    padding:60px 20px;
-    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+padding:70px 20px 90px;
+text-align:center;
+background:
+linear-gradient(
+135deg,
+#7b2ff7,
+#f107a3,
+#ff6a00
+);
+position:relative;
+overflow:hidden;
+}
+
+header::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:rgba(255,255,255,0.08);
+border-radius:50%;
+top:-250px;
+right:-200px;
+filter:blur(50px);
 }
 
 .logo{
 width:100%;
-max-width:450px;
-height:auto;
+max-width:420px;
 display:block;
-margin:0 auto 20px auto;
-object-fit:contain;
+margin:auto;
+position:relative;
+z-index:2;
 }
 
 h1{
-    font-size:48px;
-    font-weight:700;
+font-size:58px;
+font-weight:800;
+margin-top:15px;
+position:relative;
+z-index:2;
 }
 
 .descricao{
-    max-width:900px;
-    margin:20px auto 0;
-    font-size:18px;
-    line-height:1.8;
+max-width:950px;
+margin:25px auto 0;
+font-size:18px;
+line-height:1.9;
+position:relative;
+z-index:2;
 }
 
 .stats{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-top:40px;
+margin-top:45px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+position:relative;
+z-index:2;
 }
 
 .stat-box{
-    background:rgba(255,255,255,0.15);
-    padding:20px 30px;
-    border-radius:18px;
-    backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.14);
+padding:20px 30px;
+border-radius:22px;
+backdrop-filter:blur(12px);
+min-width:180px;
 }
 
 .stat-box h2{
-    font-size:30px;
+font-size:34px;
+font-weight:700;
 }
 
 .stat-box p{
-    margin-top:5px;
+margin-top:6px;
+font-size:15px;
 }
 
+/* ===================================== */
 /* PACOTES */
+/* ===================================== */
 
 .container{
-    max-width:1200px;
-    margin:60px auto;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-    padding:20px;
+max-width:1300px;
+margin:auto;
+padding:40px 20px 80px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
 .card{
-    background:#1a1a1a;
-    width:320px;
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 0 20px rgba(255,255,255,0.05);
-    transition:0.3s;
-    border:1px solid rgba(255,255,255,0.05);
+background:
+linear-gradient(
+180deg,
+#1c1c1c,
+#121212
+);
+border-radius:30px;
+padding:35px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.06);
+box-shadow:
+0 10px 40px rgba(0,0,0,0.5);
+transition:0.35s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+top:-50%;
+left:-50%;
+width:220%;
+height:220%;
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,0.04),
+transparent 60%
+);
+transform:rotate(25deg);
 }
 
 .card:hover{
-    transform:translateY(-10px);
+transform:translateY(-12px);
 }
 
 .card h2{
-    margin-bottom:15px;
-    font-size:28px;
+font-size:34px;
+margin-bottom:18px;
+position:relative;
+z-index:2;
 }
 
 .preco{
-    font-size:42px;
-    color:#00ff99;
-    margin:20px 0;
-    font-weight:bold;
+font-size:56px;
+font-weight:800;
+color:#00ff99;
+margin-bottom:18px;
+position:relative;
+z-index:2;
 }
 
 .seguidores{
-    font-size:20px;
-    margin-bottom:25px;
+font-size:22px;
+color:#ddd;
+margin-bottom:28px;
+position:relative;
+z-index:2;
 }
 
 button{
-    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
-    border:none;
-    width:100%;
-    padding:15px;
-    border-radius:12px;
-    color:white;
-    font-size:18px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
+border:none;
+width:100%;
+padding:18px;
+border-radius:18px;
+background:
+linear-gradient(
+135deg,
+#833ab4,
+#fd1d1d,
+#fcb045
+);
+color:white;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+position:relative;
+z-index:2;
 }
 
 button:hover{
-    opacity:0.9;
+transform:scale(1.02);
+opacity:0.96;
 }
 
-/* MODAL */
-
-.modal{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    overflow:auto;
-    z-index:999;
-}
-
-.modal-content{
-    background:#1a1a1a;
-    width:100%;
-    max-width:550px;
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-}
-
-.modal h3{
-    font-size:28px;
-    margin-bottom:20px;
-}
-
-.info{
-    font-size:18px;
-    line-height:1.8;
-    margin-bottom:25px;
-}
-
-input{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    margin-bottom:20px;
-    font-size:16px;
-    outline:none;
-}
-
-.fechar{
-    margin-top:15px;
-    background:#333;
-}
-
-.pix-area{
-    display:none;
-    margin-top:25px;
-}
-
-.pix-area img{
-    width:280px;
-    border-radius:15px;
-    margin-bottom:20px;
-}
-
-.pix-code{
-    background:#111;
-    padding:15px;
-    border-radius:10px;
-    font-size:13px;
-    word-break:break-all;
-    margin-bottom:15px;
-    border:1px solid #333;
-}
-
-.copy-btn{
-    background:#00cc66;
-}
-
+/* ===================================== */
 /* DEPOIMENTOS */
+/* ===================================== */
 
 .depoimentos{
-    max-width:1200px;
-    margin:80px auto;
-    padding:20px;
+padding:80px 20px;
+max-width:1300px;
+margin:auto;
 }
 
 .depoimentos h2{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:40px;
+text-align:center;
+font-size:48px;
+margin-bottom:50px;
 }
 
 .depoimentos-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .depoimento{
-    background:#1a1a1a;
-    border-radius:20px;
-    padding:25px;
-    box-shadow:0 0 15px rgba(255,255,255,0.04);
+background:#161616;
+padding:25px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .depoimento-topo{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:15px;
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:15px;
 }
 
 .depoimento-topo img{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    object-fit:cover;
+width:65px;
+height:65px;
+border-radius:50%;
+object-fit:cover;
 }
 
 .nome{
-    font-weight:600;
-    font-size:18px;
+font-size:18px;
+font-weight:600;
 }
 
 .estrelas{
-    color:#FFD700;
-    font-size:18px;
+color:#FFD700;
+font-size:18px;
+margin-top:2px;
 }
 
 .texto{
-    color:#ddd;
-    line-height:1.7;
-    font-size:15px;
+line-height:1.8;
+color:#ccc;
+font-size:15px;
 }
 
+/* ===================================== */
 /* SUPORTE */
+/* ===================================== */
 
 .suporte{
-    text-align:center;
-    padding:60px 20px;
-    background:#151515;
+background:#121212;
+padding:90px 20px;
+text-align:center;
 }
 
 .suporte h2{
-    font-size:38px;
-    margin-bottom:20px;
+font-size:46px;
+margin-bottom:20px;
 }
 
 .suporte p{
-    color:#ccc;
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
+max-width:760px;
+margin:auto;
+line-height:1.9;
+color:#bbb;
+font-size:17px;
 }
 
 .email-box{
-    background:#1f1f1f;
-    display:inline-block;
-    padding:20px 35px;
-    border-radius:18px;
-    margin-top:30px;
-    border:1px solid rgba(255,255,255,0.08);
+margin-top:35px;
+display:inline-block;
+background:#1d1d1d;
+padding:28px 40px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,0.06);
 }
 
 .email{
-    font-size:22px;
-    color:#00ff99;
-    font-weight:bold;
-    margin-top:10px;
+margin-top:10px;
+font-size:26px;
+font-weight:700;
+color:#00ff99;
 }
 
+/* ===================================== */
 /* FOOTER */
+/* ===================================== */
 
 footer{
-    text-align:center;
-    padding:30px;
-    color:#aaa;
+padding:35px 20px;
+text-align:center;
+color:#888;
+font-size:15px;
 }
 
-/* RESPONSIVO */
+/* ===================================== */
+/* MODAL */
+/* ===================================== */
+
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.88);
+display:none;
+justify-content:center;
+align-items:center;
+padding:15px;
+z-index:99999;
+overflow:auto;
+backdrop-filter:blur(8px);
+}
+
+.modal-content{
+width:100%;
+max-width:560px;
+background:
+linear-gradient(
+180deg,
+#1b1b1b,
+#101010
+);
+border-radius:32px;
+padding:35px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.06);
+animation:fade 0.3s ease;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:scale(0.9);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+.modal h3{
+font-size:34px;
+margin-bottom:25px;
+}
+
+.info{
+font-size:17px;
+line-height:1.9;
+color:#ddd;
+margin-bottom:25px;
+}
+
+input{
+width:100%;
+padding:18px;
+background:#191919;
+border:1px solid #2e2e2e;
+border-radius:18px;
+margin-bottom:18px;
+color:white;
+font-size:16px;
+outline:none;
+transition:0.2s;
+}
+
+input:focus{
+border-color:#ff3b7f;
+box-shadow:
+0 0 0 4px rgba(255,59,127,0.15);
+}
+
+.pix-area{
+display:none;
+margin-top:20px;
+}
+
+#pixQrcode{
+display:flex;
+justify-content:center;
+margin-bottom:20px;
+}
+
+#pixQrcode canvas{
+background:white;
+padding:12px;
+border-radius:18px;
+width:100%;
+max-width:290px;
+height:auto;
+}
+
+.pix-code{
+background:#0e0e0e;
+border:1px solid #2a2a2a;
+padding:16px;
+border-radius:18px;
+word-break:break-all;
+font-size:13px;
+line-height:1.7;
+margin-bottom:18px;
+color:#ddd;
+text-align:left;
+}
+
+.copy-btn{
+background:
+linear-gradient(
+135deg,
+#00b85c,
+#00ff99
+);
+margin-bottom:12px;
+}
+
+.fechar{
+background:#2d2d2d;
+}
+
+/* ===================================== */
+/* MOBILE */
+/* ===================================== */
 
 @media(max-width:768px){
 
-    h1{
-        font-size:34px;
-    }
+header{
+padding:50px 18px 70px;
+}
 
-    .descricao{
-        font-size:15px;
-    }
+.logo{
+max-width:280px;
+}
 
-    .container{
-        flex-direction:column;
-        align-items:center;
-    }
+h1{
+font-size:38px;
+}
 
-    .card{
-        width:100%;
-        max-width:360px;
-    }
+.descricao{
+font-size:15px;
+line-height:1.8;
+}
 
-    .depoimentos h2{
-        font-size:30px;
-    }
+.stat-box{
+width:100%;
+max-width:320px;
+}
+
+.container{
+padding:25px 16px 60px;
+gap:22px;
+}
+
+.card{
+padding:28px 22px;
+border-radius:28px;
+}
+
+.card h2{
+font-size:30px;
+}
+
+.preco{
+font-size:50px;
+}
+
+.seguidores{
+font-size:18px;
+}
+
+button{
+padding:17px;
+font-size:17px;
+border-radius:16px;
+}
+
+.depoimentos{
+padding:70px 16px;
+}
+
+.depoimentos h2{
+font-size:34px;
+}
+
+.suporte{
+padding:70px 16px;
+}
+
+.suporte h2{
+font-size:34px;
+}
+
+.email{
+font-size:20px;
+word-break:break-word;
+}
+
+.modal{
+padding:12px;
+align-items:flex-end;
+}
+
+.modal-content{
+border-radius:30px 30px 0 0;
+padding:28px 22px;
+max-width:100%;
+min-height:auto;
+}
+
+.modal h3{
+font-size:28px;
+}
+
+.info{
+font-size:15px;
+}
+
+input{
+padding:16px;
+font-size:15px;
+border-radius:16px;
+}
+
+#pixQrcode canvas{
+max-width:250px;
+}
+
+.pix-code{
+font-size:12px;
+}
+
+}
+
+/* ===================================== */
+/* APP STYLE */
+/* ===================================== */
+
+@media(max-width:480px){
+
+body{
+background:#090909;
+}
+
+.card{
+border-radius:32px;
+}
+
+.modal-content{
+padding-bottom:35px;
+}
 
 }
 
@@ -354,15 +605,20 @@ footer{
 
 <header>
 
-<img class="logo" src="https://i.ibb.co/ksDhhzqL/Chat-GPT-Image-18-05-2026-01-25-53.png">
+<img
+class="logo"
+src="https://i.ibb.co/ksDhhzqL/Chat-GPT-Image-18-05-2026-01-25-53.png"
+>
 
 <h1>MARKETING SOCIAL</h1>
 
 <p class="descricao">
-Há mais de 10 anos no mercado digital, a Marketing Social é referência em crescimento para Instagram no Brasil.
+
+Há mais de 10 anos no mercado digital,
+a Marketing Social é referência em crescimento para Instagram no Brasil.
+
 Milhares de clientes satisfeitos confiaram em nossos serviços para aumentar autoridade, credibilidade e presença nas redes sociais.
 
-Trabalhamos com entrega rápida, suporte especializado e seguidores de alta qualidade para ajudar influenciadores, empresas e criadores de conteúdo a crescerem de forma profissional e segura.
 </p>
 
 <div class="stats">
@@ -389,54 +645,69 @@ Trabalhamos com entrega rápida, suporte especializado e seguidores de alta qual
 <section class="container">
 
 <div class="card">
-    <h2>Pacote Inicial</h2>
 
-    <div class="preco">
-        R$200
-    </div>
+<h2>Pacote Inicial</h2>
 
-    <div class="seguidores">
-        10 MIL Seguidores
-    </div>
-
-    <button onclick="abrirModal('10 MIL Seguidores - R$200', '200')">
-        COMPRAR
-    </button>
+<div class="preco">
+R$200
 </div>
 
-<div class="card">
-    <h2>Pacote Intermediário</h2>
-
-    <div class="preco">
-        R$300
-    </div>
-
-    <div class="seguidores">
-        20 MIL Seguidores
-    </div>
-
-    <button onclick="abrirModal('20 MIL Seguidores - R$300', '300')">
-        COMPRAR
-    </button>
+<div class="seguidores">
+10 MIL Seguidores
 </div>
 
+<button
+onclick="abrirModal('10 MIL Seguidores - R$200','200')"
+>
+COMPRAR
+</button>
+
+</div>
+
+
 <div class="card">
-    <h2>Pacote Premium</h2>
 
-    <div class="preco">
-        R$450
-    </div>
+<h2>Pacote Intermediário</h2>
 
-    <div class="seguidores">
-        50 MIL Seguidores
-    </div>
+<div class="preco">
+R$300
+</div>
 
-    <button onclick="abrirModal('50 MIL Seguidores - R$450', '450')">
-        COMPRAR
-    </button>
+<div class="seguidores">
+20 MIL Seguidores
+</div>
+
+<button
+onclick="abrirModal('20 MIL Seguidores - R$300','300')"
+>
+COMPRAR
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>Pacote Premium</h2>
+
+<div class="preco">
+R$450
+</div>
+
+<div class="seguidores">
+50 MIL Seguidores
+</div>
+
+<button
+onclick="abrirModal('50 MIL Seguidores - R$450','450')"
+>
+COMPRAR
+</button>
+
 </div>
 
 </section>
+
 
 <section class="depoimentos">
 
@@ -445,110 +716,118 @@ Trabalhamos com entrega rápida, suporte especializado e seguidores de alta qual
 <div class="depoimentos-grid">
 
 <div class="depoimento">
+
 <div class="depoimento-topo">
+
 <img src="https://randomuser.me/api/portraits/women/44.jpg">
+
 <div>
-<div class="nome">Mariana Costa</div>
-<div class="estrelas">★★★★★</div>
+
+<div class="nome">
+Mariana Costa
 </div>
+
+<div class="estrelas">
+★★★★★
 </div>
+
+</div>
+
+</div>
+
 <div class="texto">
 Chegou muito rápido e meu perfil ficou muito mais profissional.
 </div>
+
 </div>
 
+
 <div class="depoimento">
+
 <div class="depoimento-topo">
+
 <img src="https://randomuser.me/api/portraits/men/83.jpg">
+
 <div>
-<div class="nome">Ricardo Almeida</div>
-<div class="estrelas">★★★★★</div>
-</div>
-</div>
-<div class="texto">
-Empresa extremamente profissional, seguidores começaram cair na conta em menos de 1 hora.
-</div>
+
+<div class="nome">
+Ricardo Almeida
 </div>
 
+<div class="estrelas">
+★★★★★
+</div>
+
+</div>
+
+</div>
+
+<div class="texto">
+Empresa extremamente profissional e entrega muito rápida.
+</div>
+
+</div>
+
+
 <div class="depoimento">
+
 <div class="depoimento-topo">
+
 <img src="https://randomuser.me/api/portraits/women/68.jpg">
+
 <div>
-<div class="nome">Amanda Silva</div>
-<div class="estrelas">★★★★★</div>
+
+<div class="nome">
+Amanda Silva
 </div>
+
+<div class="estrelas">
+★★★★★
 </div>
+
+</div>
+
+</div>
+
 <div class="texto">
 Meu engajamento aumentou muito depois da compra.
 </div>
-</div>
 
-<div class="depoimento">
-<div class="depoimento-topo">
-<img src="https://randomuser.me/api/portraits/men/41.jpg">
-<div>
-<div class="nome">Carlos Eduardo</div>
-<div class="estrelas">★★★★★</div>
-</div>
-</div>
-<div class="texto">
-Atendimento rápido e entrega antes do prazo.
-</div>
-</div>
-
-<div class="depoimento">
-<div class="depoimento-topo">
-<img src="https://randomuser.me/api/portraits/women/12.jpg">
-<div>
-<div class="nome">Fernanda Lima</div>
-<div class="estrelas">★★★★★</div>
-</div>
-</div>
-<div class="texto">
-Meu Instagram ficou muito mais forte para vendas.
-</div>
-</div>
-
-<div class="depoimento">
-<div class="depoimento-topo">
-<img src="https://randomuser.me/api/portraits/men/75.jpg">
-<div>
-<div class="nome">Rafael Gomes</div>
-<div class="estrelas">★★★★★</div>
-</div>
-</div>
-<div class="texto">
-Recomendo demais, seguidores chegaram normalmente.
-</div>
 </div>
 
 </div>
 
 </section>
+
 
 <section class="suporte">
 
 <h2>SUPORTE 24 HORAS</h2>
 
 <p>
-Nossa equipe está disponível 24 horas por dia para ajudar você em qualquer dúvida, suporte de pedidos ou acompanhamento de entrega.
+
+Nossa equipe está disponível 24 horas por dia para ajudar você em qualquer dúvida.
+
 </p>
 
 <div class="email-box">
 
-<div>📧 E-mail de Suporte</div>
+<div>
+📧 E-mail de Suporte
+</div>
 
 <div class="email">
 marketingsocial@gmail.com
 </div>
 
-<div style="margin-top:10px;color:#aaa;">
-Atendimento rápido • Suporte 24H
-</div>
-
 </div>
 
 </section>
+
+
+<!-- ===================================== -->
+<!-- MODAL -->
+<!-- ===================================== -->
 
 <div class="modal" id="modal">
 
@@ -559,20 +838,41 @@ Atendimento rápido • Suporte 24H
 <div id="formulario">
 
 <p class="info">
-<strong>DEIXE SEU INSTAGRAM ABERTO</strong><br><br>
 
-𝗔𝗣𝗢𝗦 𝗙𝗔𝗭𝗘𝗥 𝗢 𝗣𝗘𝗗𝗜𝗗𝗢 𝗔𝗚𝗨𝗔𝗥𝗗𝗘:<br><br>
+<strong>
+DEIXE SEU INSTAGRAM ABERTO
+</strong>
 
-🕑 De 30min a 1hr se não 12hrs para iniciar.
+<br><br>
+
+Após realizar o pedido aguarde de 30min até 12hrs para iniciar.
+
 </p>
 
-<input type="text" id="instagram" placeholder="Digite seu @ do Instagram">
+<input
+type="text"
+id="instagram"
+placeholder="Digite seu @ do Instagram"
+>
 
-<button onclick="mostrarPix()">
+<input
+type="text"
+id="nome"
+placeholder="Nome completo"
+>
+
+<input
+type="text"
+id="cpf"
+placeholder="CPF"
+>
+
+<button onclick="gerarPix()">
 PAGAR
 </button>
 
 </div>
+
 
 <div class="pix-area" id="pixArea">
 
@@ -580,17 +880,23 @@ PAGAR
 PAGAMENTO PIX
 </h2>
 
-<img id="pixImagem" src="">
+<div id="pixQrcode"></div>
 
 <div class="pix-code" id="pixCode"></div>
 
-<button class="copy-btn" onclick="copiarPix()">
-COPIAR CÓDIGO PIX
+<button
+class="copy-btn"
+onclick="copiarPix()"
+>
+COPIAR PIX
 </button>
 
 </div>
 
-<button class="fechar" onclick="fecharModal()">
+<button
+class="fechar"
+onclick="fecharModal()"
+>
 FECHAR
 </button>
 
@@ -598,82 +904,233 @@ FECHAR
 
 </div>
 
+
 <footer>
+
 © 2026 Marketing Social - Todos os direitos reservados
+
 </footer>
+
 
 <script>
 
-let pacoteAtual = '';
+let pacoteAtual='';
 
-const pacotes = {
+const pacotes={
 
 '200':{
-imagem:'https://i.ibb.co/tTV14fFV/Captura-de-tela-2026-05-18-004456.png',
-pix:'00020126870014br.gov.bcb.pix2565pix.basspago.com.br/qr/v3/at/b9b6ad11-5335-4352-a585-dc3c50a776bd5204000053039865802BR5921RK_INTERMEDIACAO_LTDA6008BRASILIA62070503***63041FAE'
+nome:'10 MIL Seguidores',
+valor:'200'
 },
 
 '300':{
-imagem:'https://i.ibb.co/F4Pd4jwF/Captura-de-tela-2026-05-18-004739.png',
-pix:'00020126870014br.gov.bcb.pix2565pix.basspago.com.br/qr/v3/at/c982b74d-07a6-4270-ad13-0770374a54a95204000053039865802BR5921RK_INTERMEDIACAO_LTDA6008BRASILIA62070503***6304A375'
+nome:'20 MIL Seguidores',
+valor:'300'
 },
 
 '450':{
-imagem:'https://i.ibb.co/1JG3jqT8/Captura-de-tela-2026-05-18-004939.png',
-pix:'00020126870014br.gov.bcb.pix2565pix.basspago.com.br/qr/v3/at/38464a4c-8ca6-40cf-9b7a-0bb5c34edf3c5204000053039865802BR5921RK_INTERMEDIACAO_LTDA6008BRASILIA62070503***630400D3'
+nome:'50 MIL Seguidores',
+valor:'450'
 }
 
 };
 
-function abrirModal(nome, valor){
 
-    pacoteAtual = valor;
+// =====================================
+// ABRIR MODAL
+// =====================================
 
-    document.getElementById('modal').style.display='flex';
+function abrirModal(nome,valor){
 
-    document.getElementById('pacoteNome').innerHTML=nome;
+pacoteAtual=valor;
 
-    document.getElementById('formulario').style.display='block';
+document
+.getElementById('modal')
+.style.display='flex';
 
-    document.getElementById('pixArea').style.display='none';
+document
+.getElementById('pacoteNome')
+.innerHTML=nome;
+
+document
+.getElementById('formulario')
+.style.display='block';
+
+document
+.getElementById('pixArea')
+.style.display='none';
 
 }
+
+
+// =====================================
+// FECHAR MODAL
+// =====================================
 
 function fecharModal(){
 
-    document.getElementById('modal').style.display='none';
+document
+.getElementById('modal')
+.style.display='none';
 
 }
 
-function mostrarPix(){
 
-    const insta = document.getElementById('instagram').value;
+// =====================================
+// GERAR PIX
+// =====================================
 
-    if(insta == ''){
+async function gerarPix(){
 
-        alert('Digite seu Instagram');
+const insta=
+document
+.getElementById('instagram')
+.value;
 
-        return;
+const nome=
+document
+.getElementById('nome')
+.value;
 
-    }
+const cpf=
+document
+.getElementById('cpf')
+.value;
 
-    document.getElementById('formulario').style.display='none';
+if(insta==''){
 
-    document.getElementById('pixArea').style.display='block';
-
-    document.getElementById('pixImagem').src = pacotes[pacoteAtual].imagem;
-
-    document.getElementById('pixCode').innerText = pacotes[pacoteAtual].pix;
+alert('Digite seu Instagram');
+return;
 
 }
+
+if(nome==''){
+
+alert('Digite seu nome');
+return;
+
+}
+
+if(cpf==''){
+
+alert('Digite seu CPF');
+return;
+
+}
+
+try{
+
+const valor=
+pacotes[pacoteAtual].valor;
+
+const descricao=
+pacotes[pacoteAtual].nome;
+
+
+// =====================================
+// SUA API PIX
+// =====================================
+
+const url=
+
+`https://pix-divpag-1.onrender.com/?valor=${valor}&descricao=${encodeURIComponent(descricao)}&nome=${encodeURIComponent(nome)}&cpf=${encodeURIComponent(cpf)}`;
+
+
+const response=
+await fetch(url);
+
+const html=
+await response.text();
+
+const parser=
+new DOMParser();
+
+const doc=
+parser.parseFromString(
+html,
+'text/html'
+);
+
+const pixText=
+
+doc
+.getElementById('pix')
+?.innerText;
+
+if(!pixText){
+
+alert('Erro ao gerar PIX');
+return;
+
+}
+
+document
+.getElementById('formulario')
+.style.display='none';
+
+document
+.getElementById('pixArea')
+.style.display='block';
+
+document
+.getElementById('pixCode')
+.innerText=pixText;
+
+document
+.getElementById('pixQrcode')
+.innerHTML='';
+
+QRCode.toCanvas(
+
+pixText,
+
+{
+width:280
+},
+
+function(error,canvas){
+
+if(error){
+
+console.log(error);
+return;
+
+}
+
+document
+.getElementById('pixQrcode')
+.appendChild(canvas);
+
+}
+
+);
+
+}catch(err){
+
+console.log(err);
+
+alert('Erro ao gerar PIX');
+
+}
+
+}
+
+
+// =====================================
+// COPIAR PIX
+// =====================================
 
 function copiarPix(){
 
-    const texto = document.getElementById('pixCode').innerText;
+const texto=
 
-    navigator.clipboard.writeText(texto);
+document
+.getElementById('pixCode')
+.innerText;
 
-    alert('Código PIX copiado!');
+navigator.clipboard.writeText(texto);
+
+alert('PIX copiado!');
 
 }
 
